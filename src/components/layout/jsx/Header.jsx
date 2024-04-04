@@ -4,6 +4,11 @@ import {Link} from "react-router-dom";
 import {MdLogin} from "react-icons/md";
 import {IconContext} from "react-icons";
 import {IoMenu} from "react-icons/io5";
+<<<<<<< Updated upstream
+=======
+import {getLogin} from "../../../util/login-util.jsx";
+import Dropdown from "./Dropdown.jsx";
+>>>>>>> Stashed changes
 
 const Header = () => {
 
@@ -17,8 +22,13 @@ const Header = () => {
                         <Link to="/" className={"home-link"}>Clean Cherry Blossom</Link>
                     </div>
                     {
+<<<<<<< Updated upstream
                         isLogin ? (
                             <IoMenu className={"btn-menu-mobile"}/>
+=======
+                        login ? (
+                            <Dropdown login={login}/>
+>>>>>>> Stashed changes
                         ) : (
                             <Link to={"/login"}>
                                 <MdLogin className={"btn-login-mobile"}/>
