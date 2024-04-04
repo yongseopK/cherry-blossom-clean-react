@@ -9,39 +9,48 @@ const Login = () => {
 
     const redirection = useNavigate();
 
+    const enterHandler = async (e) => {
+        if (e.code === "Enter") {
+            await fetchLoginProcess();
+        }
+    };
+
     const fetchLoginProcess = async () => {
 
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
 
 
-        if(emailInput.value === "" || passwordInput.value === "") {
+        if (emailInput.value === "" || passwordInput.value === "") {
             alert("정보를 입력해주세요");
             return;
         }
 
-        const response = await axios.post(
-            API_BASE_URL + LOGIN_URL,
-            JSON.stringify({
-                email : emailInput.value,
-                password: passwordInput.value,
-            }),
-            {headers: {"Content-Type": "Application/json"},}
-        );
+        try {
+            const response = await axios.post(
+                LOGIN_URL,
+                JSON.stringify({
+                    email: emailInput.value,
+                    password: passwordInput.value,
+                }),
+                {
+                    headers: {"Content-Type": "Application/json"}
+                },
+            );
 
-        if(response.status === 400) {
-            const text = await response.data;
-            alert(text);
-        }
+            if (response.status === 200) {
+                const {token, userName, role} = await response.data;
 
-        if(response.status === 200) {
-            const {token, userName, role} = await response.data;
+                localStorage.setItem(TOKEN, token);
+                localStorage.setItem(USERNAME, userName);
+                localStorage.setItem(ROLE, role);
 
-            localStorage.setItem(TOKEN, token);
-            localStorage.setItem(USERNAME, userName);
-            localStorage.setItem(ROLE, role);
-
-            redirection('/');
+                redirection('/');
+            }
+        } catch (err) {
+            if (err.response && err.response.status === 400) {
+                alert(err.response.data);
+            }
         }
 
 
@@ -50,10 +59,11 @@ const Login = () => {
         <div className={"login-component"}>
             <div className={"member-background"}></div>
             <div className="login-form">
-                <span className={"login-title"}>Login</span>
+                <span className={"login-title"}>로그인</span>
                 <div className={"input-area"}>
-                    <input id={"email"} className={"login-input"} type="text" placeholder={"E-mail"}/>
-                    <input id={"password"} className={"login-input"} type="password" placeholder={"Password"}/>
+                    <input id={"email"} className={"login-input"} type="text" placeholder={"이메일"} onKeyUp={enterHandler}/>
+                    <input id={"password"} className={"login-input"} type="password" placeholder={"비밀번호"}
+                           onKeyUp={enterHandler}/>
                 </div>
                 <div className="auto-login-forgot-password">
                     <label className={"auto-login-label"}>
