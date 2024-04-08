@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {API_BASE_URL, LOGIN_URL} from "../../../config/host-config.jsx";
 import "../scss/Login.scss";
-import {ROLE, TOKEN, USERNAME} from "../../../util/login-util.jsx";
+import {getLogin, ROLE, TOKEN, USERNAME} from "../../../util/login-util.jsx";
+import {Main} from "../../../App.jsx";
 
 const Login = () => {
 
     const redirection = useNavigate();
+
+    useEffect(() => {
+        document.title = '로그인';
+    }, []);
 
     const enterHandler = async (e) => {
         if (e.code === "Enter") {
@@ -55,6 +60,11 @@ const Login = () => {
 
 
     };
+
+    if(getLogin()) {
+        window.location.href = "/";
+    }
+
     return (
         <div className={"login-component"}>
             <div className={"member-background"}></div>

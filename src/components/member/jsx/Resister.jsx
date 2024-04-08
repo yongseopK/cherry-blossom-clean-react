@@ -1,8 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import '../scss/Register.scss';
-import {CHECK_EMAIL} from "../../../config/host-config.jsx";
+import {CHECK_EMAIL, REGISTER_URL} from "../../../config/host-config.jsx";
+import {json, useNavigate, useNavigation} from "react-router-dom";
+import {getLogin} from "../../../util/login-util.jsx";
+import {Main} from "../../../App.jsx";
 
 const Resister = () => {
+
+    const redirection = useNavigate();
+
 
     useEffect(() => {
         document.title = '회원가입';
@@ -82,6 +88,40 @@ const Resister = () => {
 
     const isAllValid = Object.values(inputStates).every((field) => field.isValid);
 
+    const registerHandler = async (e) => {
+        const userData = {
+            "email" : inputStates.email.value,
+            "userName" : inputStates.name.value,
+            "password" : inputStates.password.value,
+        }
+
+        const response = await fetch(
+            REGISTER_URL,
+            {
+                method : "POST",
+                body : JSON.stringify(userData),
+                headers : {
+                    "Content-Type" : "Application/json",
+                }
+            }
+        )
+
+        if(response.status === 200) {
+            alert("회원가입에 성공했습니다!");
+            redirection("/login");
+        } else if (response.status === 400) {
+            alert("요청이 잘못되었습니다.");
+        } else if (response.status === 500) {
+            alert("서버 오류가 발생했습니다.");
+        } else {
+            alert("알 수 없는 오류가 발생했습니다.");
+        }
+    };
+
+    if(getLogin()) {
+        window.location.href = "/";
+    }
+
     return (
         <div className={"register-component"}>
             <div className="register-background"></div>
@@ -113,7 +153,7 @@ const Resister = () => {
                             className={`validated-message ${inputStates.passwordConfirm.isValid ? 'green' : 'red'}`}>{inputStates.passwordConfirm.message}</span>
                     </div>
                 </div>
-                <button className="btn-register-process" disabled={!isAllValid}>회원가입</button>
+                <button className={`btn-register-process ${!isAllValid ? "disabled" : ""}`} disabled={!isAllValid} onClick={registerHandler}>회원가입</button>
             </div>
         </div>
     );
