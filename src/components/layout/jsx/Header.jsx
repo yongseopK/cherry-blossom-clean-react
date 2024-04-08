@@ -31,7 +31,6 @@ const Header = () => {
                     {
                         login ? (
                             <Dropdown login={login}/>
-                            <IoMenu className={"btn-menu-mobile"}/>
                         ) : (
                             <Link to={"/login"}>
                                 <MdLogin className={"btn-login-mobile"}/>
