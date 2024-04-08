@@ -1,0 +1,36 @@
+.map-area {
+  position: relative;
+
+  .btn-filter-group {
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .btn-trash-can {
+      font-size: 2em;
+      color: #fff;
+
+      width: 50px;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #000;
+      cursor: pointer;
+    }
+
+    .btn-flower {
+      font-size: 2em;
+      color: #fff;
+
+      width: 50px;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #000;
+      cursor: pointer;
+    }
+  }
+}

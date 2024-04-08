@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
-import {NAVER_MAP_CLIENT_ID} from "../../../config/host-config.jsx";
+import '../scss/MapTemplate.scss';
+import {FaTrash} from "react-icons/fa";
+import {IoMdFlower} from "react-icons/io";
+import Skeleton from "../../layout/jsx/Skeleton.jsx";
 
 const MapTemplate = () => {
     const navermaps = useNavermaps();
@@ -59,20 +62,20 @@ const MapTemplate = () => {
     }
 
     return (
-        <>
+        <div className={"map-area"}>
             <div className="btn-filter-group">
-                <button className="trash-can">쓰레기통 위치</button>
-                <button className="flower">벚꽃 개화시기</button>
+                <FaTrash className={"btn-trash-can"} />
+                <IoMdFlower className={"btn-flower"} />
             </div>
             {isLoading ? (
-                <div>Loading...</div>
+                <Skeleton/>
             ) : (
                 <NaverMap defaultCenter={currentPosition} defaultZoom={15}>
                     {currentPosition && <Marker position={currentPosition} />}
                 </NaverMap>
             )
             }
-        </>
+        </div>
     );
 };
 
