@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react';
 import '../scss/Header.scss';
 import {Link} from "react-router-dom";
 import {MdLogin} from "react-icons/md";
-import {IconContext} from "react-icons";
 import {IoMenu} from "react-icons/io5";
 import {getLogin} from "../../../util/login-util.jsx";
+import Dropdown from "./Dropdown.jsx";
+
 
 const Header = () => {
 
@@ -29,6 +30,7 @@ const Header = () => {
                     </div>
                     {
                         login ? (
+                            <Dropdown login={login}/>
                             <IoMenu className={"btn-menu-mobile"}/>
                         ) : (
                             <Link to={"/login"}>
