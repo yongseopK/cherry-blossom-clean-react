@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
-import {NAVER_MAP_CLIENT_ID} from "../../config/host-config.jsx";
+import {NAVER_MAP_CLIENT_ID} from "../../../config/host-config.jsx";
 
 const MapTemplate = () => {
     const navermaps = useNavermaps();
@@ -60,6 +60,10 @@ const MapTemplate = () => {
 
     return (
         <>
+            <div className="btn-filter-group">
+                <button className="trash-can">쓰레기통 위치</button>
+                <button className="flower">벚꽃 개화시기</button>
+            </div>
             {isLoading ? (
                 <div>Loading...</div>
             ) : (

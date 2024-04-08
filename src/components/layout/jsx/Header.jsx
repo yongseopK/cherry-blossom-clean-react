@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../scss/Header.scss';
 import {Link} from "react-router-dom";
 import {MdLogin} from "react-icons/md";
@@ -9,7 +9,17 @@ import Dropdown from "./Dropdown.jsx";
 
 const Header = () => {
 
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(getLogin());
+
+    useEffect(() => {
+        setIsLoggedIn(getLogin());
+    }, [getLogin()]);
+
+    const [login, setLogin] = useState(false);
+
+    useEffect(() => {
+        setLogin(getLogin());
+    }, [login]);
     return (
         <>
             <header id={"header"}>
@@ -21,6 +31,7 @@ const Header = () => {
                     {
                         login ? (
                             <Dropdown login={login}/>
+                            <IoMenu className={"btn-menu-mobile"}/>
                         ) : (
                             <Link to={"/login"}>
                                 <MdLogin className={"btn-login-mobile"}/>

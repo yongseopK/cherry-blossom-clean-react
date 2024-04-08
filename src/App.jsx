@@ -1,8 +1,8 @@
-import React from "react";
-import MapTemplate from "./components/blossom-map/MapTemplate.jsx";
+import React, {useEffect} from "react";
+import MapTemplate from "./components/blossom-map/jsx/MapTemplate.jsx";
 import {NavermapsProvider} from "react-naver-maps";
 import {NAVER_MAP_CLIENT_ID} from "./config/host-config.jsx";
-import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
+import {Container as MapDiv, NaverMap, Marker, useNavermaps} from 'react-naver-maps'
 import Header from "./components/layout/jsx/Header.jsx";
 import {Route, Routes} from "react-router-dom";
 import Login from "./components/member/jsx/Login.jsx";
@@ -20,7 +20,11 @@ function App() {
     )
 }
 
-const Main = () => {
+export const Main = () => {
+
+    useEffect(() => {
+        document.title = '메인 페이지';
+    }, []);
     return (
         <NavermapsProvider
             ncpClientId={NAVER_MAP_CLIENT_ID}
