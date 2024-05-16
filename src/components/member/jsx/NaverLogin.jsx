@@ -13,7 +13,6 @@ const NaverLogin = () => {
 
         const token = location.hash.split('=')[1].split('&')[0];
 
-
         const response = await axios.post("http://localhost:8888/api/members/naver", {
             token: token,
         }, {withCredential: true})
