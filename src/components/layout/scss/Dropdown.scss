@@ -1,6 +1,12 @@
+a {
+  color: black;
+  text-decoration-line: none;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 1000;
 
   .menu-btn {
     font-size: 2em;

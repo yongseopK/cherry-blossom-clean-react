@@ -15,7 +15,7 @@ const skeletonAnimation = keyframes`
 
 const SkeletonWrapper = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   background-color: rgba(165, 165, 165, 0.1);
   border-radius: 4px;
   animation: ${skeletonAnimation} 1.5s infinite ease-in-out;

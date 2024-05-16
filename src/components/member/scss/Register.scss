@@ -116,6 +116,10 @@ $font-family: "Noto Sans Batak", sans-serif;
       color: #000;
 
       cursor: pointer;
+
+      &:disabled {
+        background-color: #b3b3b3;
+      }
     }
   }
 }
