@@ -19,6 +19,7 @@ import busanBoundaryData from '../../../assets/boundary/busanBoundary.json';
 import yeosuBoundaryData from '../../../assets/boundary/yeosuBoundary.json';
 import seogwipoBoundaryData from '../../../assets/boundary/seogwipoBoundary.json';
 import CustomOverlay from "./CustomOverlay.jsx";
+import {TOKEN_VALIDATE_API_URL, TRASH_CAN_LOCATION} from "../../../config/host-config.jsx";
 
 
 const MapTemplate = () => {
@@ -132,7 +133,7 @@ const MapTemplate = () => {
 
         if (checked) {
             const response = await fetch(
-                `http://localhost:8888/api/maps/garbage-can?value=${district}`,
+                `${TRASH_CAN_LOCATION}?value=${district}`,
                 {
                     method: 'GET',
                 }
@@ -278,7 +279,7 @@ const MapTemplate = () => {
          * @returns {Promise<void>}
          */
         const infomationValidate = async () => {
-            const response = await fetch("http://localhost:8888/api/members/token/validate", {
+            const response = await fetch(TOKEN_VALIDATE_API_URL, {
                 method: 'POST',
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`,

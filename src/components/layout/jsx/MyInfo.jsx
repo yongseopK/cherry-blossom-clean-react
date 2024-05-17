@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Header from "./Header.jsx";
 import {getLogin} from "../../../util/login-util.jsx";
 import "../scss/MyInfo.scss";
-import {INFO_URL, WITHDRAWAL_URL} from "../../../config/host-config.jsx";
+import {INFO_URL, MEMBER_MODIFY_API_URL, WITHDRAWAL_URL} from "../../../config/host-config.jsx";
 import {Button, CircularProgress, Paper, TextField} from "@mui/material";
 import Modal from 'react-modal';
 import '../scss/WithdrawalModal.scss';
@@ -140,7 +140,7 @@ const MyInfo = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8888/api/members/modify", {
+            const response = await fetch(MEMBER_MODIFY_API_URL, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`,
