@@ -65,38 +65,38 @@
 
 | Main                                              |
 | ------------------------------------------------- |
-| <img src="./readmeImg/mainPage1.png" width="50%"> |
-| <img src="./readmeImg/mainPage2.png" width="50%"> |
-| <img src="./readmeImg/mainPage3.png" width="50%"> |
+| <img src="./readmeImg/mainPage1.png"> |
+| <img src="./readmeImg/mainPage2.png"> |
+| <img src="./readmeImg/mainPage3.png"> |
 
 | Login                                             |
 | ------------------------------------------------- |
-| <img src="./readmeImg/loginPage.png" width="50%"> |
+| <img src="./readmeImg/loginPage.png"> |
 
 | Register                                              |
 | ----------------------------------------------------- |
-| <img src="./readmeImg/registerPage1.png" width="50%"> |
-| <img src="./readmeImg/registerPage2.png" width="50%"> |
+| <img src="./readmeImg/registerPage1.png"> |
+| <img src="./readmeImg/registerPage2.png"> |
 
 | User Info                                             |
 | ----------------------------------------------------- |
-| <img src="./readmeImg/userInfoPage1.png" width="50%"> |
-| <img src="./readmeImg/userInfoPage2.png" width="50%"> |
-| <img src="./readmeImg/userInfoPage3.png" width="50%"> |
+| <img src="./readmeImg/userInfoPage1.png"> |
+| <img src="./readmeImg/userInfoPage2.png"> |
+| <img src="./readmeImg/userInfoPage3.png"> |
 
 | Report List                                        |
 | -------------------------------------------------- |
-| <img src="./readmeImg/reportList.png" width="50%"> |
+| <img src="./readmeImg/reportList.png"> |
 
 | Report Modal                                        |
 | --------------------------------------------------- |
-| <img src="./readmeImg/reportPage1.png" width="50%"> |
-| <img src="./readmeImg/reportPage2.png" width="50%"> |
+| <img src="./readmeImg/reportPage1.png"> |
+| <img src="./readmeImg/reportPage2.png"> |
 
 | Admin Page                                              |
 | ------------------------------------------------------- |
-| <img src="./readmeImg/adminMemberList.png" width="50%"> |
-| <img src="./readmeImg/adminReportList.png" width="50%"> |
+| <img src="./readmeImg/adminMemberList.png"> |
+| <img src="./readmeImg/adminReportList.png"> |
 
 ## Project Structure 🌲
 
