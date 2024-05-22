@@ -17,7 +17,7 @@ const Login = () => {
 
     const [showPopup, setShowPopup] = useState(false);
 
-    const openPopup = () =>{
+    const openPopup = () => {
         setShowPopup(true);
     }
 
@@ -105,7 +105,7 @@ const Login = () => {
                     }
                 } else if (err.response.status === 401) {
                     alert("아이디 또는 비밀번호가 잘못되었습니다.");
-                } else if(err.response.status === 450) {
+                } else if (err.response.status === 450) {
                     alert(errorMessage);
                 } else {
                     alert("로그인 중 오류가 발생했습니다.");
@@ -160,7 +160,7 @@ const Login = () => {
                 <div className="social-login">
                     {/*<img src={'images/googleLogin.png'} alt="google login" title={"구글 로그인"} onClick={googleLoginHandler}/>*/}
                     {/*<img src={'images/kakaoLogin.png'} alt="google login" title={"카카오 로그인"}/>*/}
-                    <GoogleLoginComponent />
+                    <GoogleLoginComponent/>
                     <NaverLoginComponent/>
                 </div>
 
