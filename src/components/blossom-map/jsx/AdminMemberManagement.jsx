@@ -4,7 +4,6 @@ import {DataGrid} from "@mui/x-data-grid";
 import {MEMBER_ADMIN, MEMBER_PROMOTE} from "../../../config/host-config.jsx";
 import "../scss/AdminMemberManagement.scss";
 import {Button} from "@mui/material";
-import axios from "axios";
 
 const AdminMemberManagement = () => {
 

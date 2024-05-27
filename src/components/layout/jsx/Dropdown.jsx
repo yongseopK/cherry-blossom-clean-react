@@ -3,7 +3,6 @@ import '../scss/Dropdown.scss';
 import {IoMenu} from 'react-icons/io5';
 import {Link, useNavigate} from "react-router-dom";
 import Modal from './Modal.jsx';
-import AdminReportList from "../../blossom-map/jsx/AdminReportList.jsx";
 
 const Dropdown = ({login}) => {
     const [isOpen, setIsOpen] = useState(false);

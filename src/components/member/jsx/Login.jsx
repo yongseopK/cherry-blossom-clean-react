@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
-import {API_BASE_URL, LOGIN_URL, WITHDRAWAL_CANCEL_URL} from "../../../config/host-config.jsx";
+import { LOGIN_URL, WITHDRAWAL_CANCEL_URL} from "../../../config/host-config.jsx";
 import "../scss/Login.scss";
 import {getLogin, ROLE, TOKEN, USERNAME} from "../../../util/login-util.jsx";
-import {Main} from "../../../App.jsx";
 import GoogleLoginComponent from "./GoogleLoginComponent.jsx";
 import NaverLoginComponent from "./NaverLoginComponent.jsx";
 import ForgetPassword from "./ForgetPassword.jsx";

@@ -3,7 +3,7 @@ import Header from "./Header.jsx";
 import {getLogin} from "../../../util/login-util.jsx";
 import "../scss/MyInfo.scss";
 import {INFO_URL, MEMBER_MODIFY_API_URL, WITHDRAWAL_URL} from "../../../config/host-config.jsx";
-import {Button, CircularProgress, Paper, TextField} from "@mui/material";
+import {Button, CircularProgress, Paper } from "@mui/material";
 import Modal from 'react-modal';
 import '../scss/WithdrawalModal.scss';
 

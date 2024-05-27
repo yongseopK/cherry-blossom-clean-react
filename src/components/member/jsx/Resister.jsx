@@ -3,7 +3,6 @@ import '../scss/Register.scss';
 import {CHECK_EMAIL, REGISTER_URL} from "../../../config/host-config.jsx";
 import {json, useNavigate, useNavigation} from "react-router-dom";
 import {getLogin} from "../../../util/login-util.jsx";
-import {Main} from "../../../App.jsx";
 
 const Resister = () => {
 

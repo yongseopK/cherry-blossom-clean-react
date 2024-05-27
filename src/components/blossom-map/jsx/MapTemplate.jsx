@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {NaverMap, Marker, useNavermaps, Polygon, InfoWindow} from 'react-naver-maps';
+import {NaverMap, Marker, useNavermaps, Polygon } from 'react-naver-maps';
 import '../scss/MapTemplate.scss';
 import {FaTrash} from 'react-icons/fa';
 import {IoMdFlower} from 'react-icons/io';
@@ -233,14 +233,6 @@ const MapTemplate = () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
     }, []);
-
-    // useEffect(() => {
-    //     console.log(markers);
-    // }, [markers]);
-    //
-    // useEffect(() => {
-    //     console.log(checkedLocations);
-    // }, [checkedLocations]);
 
     useEffect(() => {
         if (checkedLocations.length === 0) {
